@@ -1,6 +1,8 @@
 name: Releases
 on:
-- release
+  release:
+    types:
+    - published
 jobs:
   build:
     name: Build & Deploy

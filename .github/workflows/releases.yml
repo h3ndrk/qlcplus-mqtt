@@ -3,7 +3,7 @@ on:
 - release
 jobs:
   build:
-    name: Build
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
     - name: Set up Go 1.12
@@ -17,10 +17,6 @@ jobs:
       run: go get -v -t -d ./...
     - name: Build
       run: go build -v .
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
     - name: Publish binaries
       uses: skx/github-action-publish-binaries@master
       env:

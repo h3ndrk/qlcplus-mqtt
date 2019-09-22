@@ -18,10 +18,13 @@ jobs:
     - name: Get dependencies
       run: go get -v -t -d ./...
     - name: Build
-      run: go build -v .
+      run: go build -v -o qlcplus-mqtt-amd64 .
+      env:
+        GOOS: linux
+        GOARCH: amd64
     - name: Publish binaries
       uses: skx/github-action-publish-binaries@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: 'qlcplus-mqtt'
+        args: qlcplus-mqtt-amd64

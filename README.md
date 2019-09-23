@@ -91,10 +91,19 @@ The following topics are subscribed/published to by qlcplus-mqtt.
         - `/modify`: `{"username": string, "level": number}`
     - `/api`
         - `/function`
-            - `/enable`: `boolean`
+            - `/<id>`
+                - `/enable`: `boolean`
         - `/channel`
-            - `/<absAddr>`: `number`
+            - `/<absAddr>`
+                - `/value`: `number`
         - `/widget`
-            - `/<id>`: `boolean` for `Button` and `AudioTrigger` type, `number` for `Slider` type, `{"command": string, ["index": number]}` for `CueList` type, `string` for `Frame` and `SoloFrame` type
-        - `/channel`
-            - `/<absoluteAddress>`: `number`
+            - `/<id>`
+                - `/value`: `boolean` for `Button` and `AudioTrigger` type, `number` for `Slider` type, `{"command": string, ["index": number]}` for `CueList` type, `string` for `Frame` and `SoloFrame` type
+
+### Publish to topics
+
+- `/qlcplus`
+    - `/api`
+        - `/function`: `[{"id": number, "type": string, "enabled": boolean}]` (retained)
+        - `/channel`: `[{"absAddr": number, "value": number}]` (retained)
+        - `/widget`: `[{"id": number, "type": string, "value": <value>}]` with value see above (retained)

@@ -68,3 +68,33 @@
         - `NEXT`: Selects next cue
         - `STEP|<index>`: Selects cue with given `<index>`
     - `Frame`, `SoloFrame`: `<value>` is one of `NEXT_PG` (next page) or `PREV_PG` (previous page)
+
+## MQTT topics and payloads
+
+The following topics are subscribed/published to by qlcplus-mqtt.
+
+### Subscribe to topics
+
+- `/qlcplus`
+    - `/opmode`: Toggle between design/operate mode
+    - `/io`
+        - `/input`: `{"universe": number, "pluginName": string, "input": number}`
+        - `/output`: `{"universe": number, "pluginName": string, "input": number}`
+        - `/feedback`: `{"universe": number, "pluginName": string, "input": number}`
+        - `/profile`: `{"universe": number, "profileName": string}`
+        - `/passthrough`: `{"universe": number, "enable": boolean}`
+        - `/audioin`: `{"device": string/null}`
+        - `/audioout`: `{"device": string/null}`
+    - `/auth`
+        - `/add`: `{"username": string, "password": string, "level": number}`
+        - `/delete`: `{"username": string}`
+        - `/modify`: `{"username": string, "level": number}`
+    - `/api`
+        - `/function`
+            - `/enable`: `boolean`
+        - `/channel`
+            - `/<absAddr>`: `number`
+        - `/widget`
+            - `/<id>`: `boolean` for `Button` and `AudioTrigger` type, `number` for `Slider` type, `{"command": string, ["index": number]}` for `CueList` type, `string` for `Frame` and `SoloFrame` type
+        - `/channel`
+            - `/<absoluteAddress>`: `number`

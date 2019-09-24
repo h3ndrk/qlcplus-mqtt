@@ -43,13 +43,13 @@
     - answer: `QLC+API|getWidgetsNumber|<number>`
 - `QLC+API|getWidgetsList`: Returns all widgets
     - answer: `QLC+API|getWidgetsList|[<id>|<caption>]...`
-- `QLC+API|getWidgetType|<id>`: Returns the type of the function with the given `<id>` (or `Unknown`)
+- `QLC+API|getWidgetType|<id>`: Returns the type of the widget with the given `<id>` (or `Unknown`)
     - answer: `QLC+API|getWidgetType|<type>` with `<type>` one of `Button`, `Slider`, `XYPad`, `Frame`, `SoloFrame`, `SpeedDial`, `CueList`, `Label`, `AudioTriggers`, `Animation`, `Clock`
-- `QLC+API|getWidgetStatus|<id>`: Returns the state of the function with the given `<id>`
-    - answer for type `Button`: `QLC+API|setWidgetStatus|<value>` with `<value>` equals to `255` when active, `127` when monitoring or `0` when inactive
-    - answer for type `Slider`: `QLC+API|setWidgetStatus|<value>` with `<value>` in the range `[0,255]`
-    - answer for type playing `CueList`: `QLC+API|setWidgetStatus|PLAY|<cueIndex>` with `<cueIndex>` equals to the current cue index
-    - answer for type stopped `CueList`: `QLC+API|setWidgetStatus|STOP`
+- `QLC+API|getWidgetStatus|<id>`: Returns the state of the widget with the given `<id>`
+    - answer for type `Button`: `QLC+API|getWidgetStatus|<value>` with `<value>` equals to `255` when active, `127` when monitoring or `0` when inactive
+    - answer for type `Slider`: `QLC+API|getWidgetStatus|<value>` with `<value>` in the range `[0,255]`
+    - answer for type playing `CueList`: `QLC+API|getWidgetStatus|PLAY|<cueIndex>` with `<cueIndex>` equals to the current cue index
+    - answer for type stopped `CueList`: `QLC+API|getWidgetStatus|STOP`
 - `QLC+API|getChannelsValues|<universe>|<startAddr>|[<count>]`: Returns the channel values of a given `<universe>` (starting at one) beginning at given `<startAddr>` (starting at one) and returning one or given `<count>` channels
     - answer: `QLC+API|getChannelsValues|[<channel>|<value>|<type>]...` with `<channel>` starting at one, value in range `[0,255]` and `<type>` the fixture type
 - `QLC+API|sdResetChannel|<channel>`: Reset given `<channel>` of the current universe (skipped because not the scope)

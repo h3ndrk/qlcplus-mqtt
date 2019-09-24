@@ -56,7 +56,7 @@ Supported endpoints have a checkmark:
     - answer: `QLC+API|getChannelsValues|[<channel>|<value>|<type>]...` with `<channel>` starting at one, value in range `[0,255]` and `<type>` the fixture type
 - [ ] `QLC+API|sdResetChannel|<channel>`: Reset given `<channel>` of the current universe (skipped because not the scope)
 - [ ] `QLC+API|sdResetUniverse`: Reset all channels of the current universe (skipped because not the scope)
-- [ ] `CH|<absAddr>|<value>`: Sets the channel described with given `<absAddr>` to given `<value>` in range `[0,255]`
+- [x] `CH|<absAddr>|<value>`: Sets the channel described with given `<absAddr>` to given `<value>` in range `[0,255]`
 - [ ] `POLL`: Poll this API
 - [ ] `<id>[|<value>]`: Sets given `<value>` of widget with given `<id>`
     - `Button`: `<value>` equals to `1` for press and `0` for release

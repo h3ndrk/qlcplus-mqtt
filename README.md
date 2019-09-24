@@ -39,7 +39,6 @@
 - `QLC+API|getFunctionStatus|<id>`: Returns the state of the function with the given `<id>`
     - answer: `QLC+API|getFunctionStatus|<state>` with `<state>` equals to `Running` or `Stopped` (or `Undefined`)
 - `QLC+API|setFunctionStatus|<id>|<state>`: Sets the state of the function with the given `<id>` to the given `<state>` (`0` is `Stopped`, `1` is `Running`)
-    - answer: `QLC+API|setFunctionStatus|<state>` with `<state>` equals to `Running` or `Stopped` (or `Undefined`)
 - `QLC+API|getWidgetsNumber`: Returns the number of widgets
     - answer: `QLC+API|getWidgetsNumber|<number>`
 - `QLC+API|getWidgetsList`: Returns all widgets

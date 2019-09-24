@@ -13,7 +13,7 @@ type FunctionIDName struct {
 	Name string
 }
 
-// FunctionList is the list of functions
+// FunctionsList is the list of functions
 type FunctionsList []FunctionIDName
 
 // GetFunctionsList returns all functions

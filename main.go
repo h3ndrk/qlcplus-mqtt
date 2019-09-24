@@ -180,6 +180,20 @@ func main() {
 
 	log.Printf("Number: %d", number)
 
+	t, err := a.GetFunctionType(10)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("Type of #10: %s", t)
+
+	status, err := a.GetFunctionStatus(10)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("Status of #10: %t", status)
+
 	/*c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
 

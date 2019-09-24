@@ -24,8 +24,17 @@ func NewAPI(wsURL string) (*API, error) {
 }
 
 // Close disconnects an API connection to QLC+
-func (a *API) Close() {
+func (a *API) Close() error {
+	// Cleanly close the connection by sending a close message and then
+	// waiting (with timeout) for the server to close the connection.
+	err := a.ws.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, ""))
+	if err != nil {
+		return errors.Wrap(err, "Failed to send close message")
+	}
+
 	a.ws.Close()
+
+	return nil
 }
 
 func (a *API) receiveText() ([]byte, error) {

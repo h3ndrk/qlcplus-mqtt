@@ -76,7 +76,7 @@ The following topics are subscribed/published to by qlcplus-mqtt.
 
 ### Subscribe to topics
 
-- [ ] `/qlcplus`
+- `/qlcplus`
     - `/api`
         - `/function`
             - `/<id>`
@@ -90,7 +90,7 @@ The following topics are subscribed/published to by qlcplus-mqtt.
 
 ### Publish to topics
 
-- [ ] `/qlcplus`
+- `/qlcplus`
     - `/api`
         - `/function`: `[{"id": number, "type": string, "enabled": boolean}]` (retained)
         - `/channel`: `[{"absAddr": number, "value": number}]` (retained)

@@ -14,10 +14,10 @@ type FunctionIDName struct {
 }
 
 // FunctionList is the list of functions
-type FunctionList []FunctionIDName
+type FunctionsList []FunctionIDName
 
-// GetFunctionList returns all functions
-func (a *API) GetFunctionList( /*ctx context.Context,*/ ) (FunctionList, error) {
+// GetFunctionsList returns all functions
+func (a *API) GetFunctionsList( /*ctx context.Context,*/ ) (FunctionsList, error) {
 	// - `QLC+API|getFunctionsList`: Returns all functions
 	//     - answer: `QLC+API|getFunctionsList|[<id>|<name>]...`
 
@@ -42,8 +42,11 @@ func (a *API) GetFunctionList( /*ctx context.Context,*/ ) (FunctionList, error) 
 	if len(parts) < 2 || (len(parts)-2)%2 != 0 {
 		return nil, errors.New("Invalid amount of parts")
 	}
+	if parts[0] != "QLC+API" || parts[1] != "getFunctionsList" {
+		return nil, errors.New("Unexpected response")
+	}
 
-	f := FunctionList{}
+	f := FunctionsList{}
 	for i := 2; i < len(parts); i += 2 {
 		ID, err := strconv.Atoi(parts[i])
 		if err != nil {

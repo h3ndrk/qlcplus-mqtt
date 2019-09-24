@@ -194,6 +194,13 @@ func main() {
 
 	log.Printf("Status of #10: %t", status)
 
+	values, err := a.GetChannelsValues(0, 0, 16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("Values: %+v", values)
+
 	/*c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
 

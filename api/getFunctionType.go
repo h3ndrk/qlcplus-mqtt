@@ -10,7 +10,7 @@ import (
 // FunctionType is one of `Scene`, `Chaser`, `EFX`, `Collection`, `Script`, `RGBMatrix`, `Show`, `Sequence`, `Audio`, `Video`
 type FunctionType string
 
-// GetFunctionType returns the type of the function with the given `<id>` (or `Undefined`)
+// GetFunctionType returns the type of the function with the given `<id>`
 func (a *API) GetFunctionType( /*ctx context.Context,*/ id int) (FunctionType, error) {
 	// - `QLC+API|getFunctionType|<id>`: Returns the type of the function with the given `<id>` (or `Undefined`)
 	//     - answer: `QLC+API|getFunctionType|<type>` with `<type>` one of `Scene`, `Chaser`, `EFX`, `Collection`, `Script`, `RGBMatrix`, `Show`, `Sequence`, `Audio`, `Video`

@@ -58,7 +58,7 @@ Supported endpoints have a checkmark:
 - [ ] `QLC+API|sdResetUniverse`: Reset all channels of the current universe (skipped because not the scope)
 - [x] `CH|<absAddr>|<value>`: Sets the channel described with given `<absAddr>` to given `<value>` in range `[0,255]`
 - [ ] `POLL`: Poll this API
-- [ ] `<id>[|<value>]`: Sets given `<value>` of widget with given `<id>`
+- [x] `<id>[|<value>]`: Sets given `<value>` of widget with given `<id>`
     - `Button`: `<value>` equals to `1` for press and `0` for release
     - `Slider`: `<value>` is in range of slider
     - `AudioTrigger`: `<value>` equals to `1` for active and `0` for inactive

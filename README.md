@@ -1,5 +1,7 @@
 # qlcplus-mqtt
 
+**This repository is unmaintained. Current status is: WebSocket protocol implemented as stated below. First MQTT tests are in `main.go` but *not* implemented as stated below. Feel free to contribute! (The Golang package paths need to be updated because I changed my GitHub username.)**
+
 ## QLC+ WebSocket protocol reverse engineering
 
 Supported endpoints have a checkmark:

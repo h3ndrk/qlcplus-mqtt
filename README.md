@@ -72,7 +72,7 @@ Supported endpoints have a checkmark:
         - `STEP|<index>`: Selects cue with given `<index>`
     - `Frame`, `SoloFrame`: `<value>` is one of `NEXT_PG` (next page) or `PREV_PG` (previous page)
 
-## MQTT topics and payloads
+## Unimplemented: MQTT topics and payloads
 
 The following topics are subscribed/published to by qlcplus-mqtt.
 
